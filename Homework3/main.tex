@@ -1,0 +1,61 @@
+\documentclass[10pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+ 
+\begin{document}
+ 
+\title{ASTR 400B Set 3}
+\author{William Lake
+}
+
+\maketitle
+
+\section*{Table}
+
+\begin{center}
+\centering
+\begin{tabular}{||c c c c c c||} 
+ \hline
+ Galaxy Name & Halo Mass (\(10^{12} M_\odot\)) & Disk Mass (\(10^{12} M_\odot\)) & Bulge Mass (\(10^{12} M_\odot\)) & Total Mass (\(10^{12} M_\odot\)) & $f_{\text{bar}}$ \\ [0.5ex] 
+ \hline\hline
+ Milky Way & \(1.975\) & \(7.5 * 10^{-2}\) & \(1.001 * 10^{-2}\) & 2.06 & \(0.024\) \\ 
+ \hline
+ M31 & \(1.921\) & \(1.2 * 10^{-1}\) & \(1.905 * 10^{-2}\) & 2.06 & \(0.067\)\\
+ \hline
+ M33 & \(1.866 * 10^{-1}\) & \(9.3 * 10^{-3}\) & 0 & \(1.959 * 10^{-1}\) & \(0.047\)\\ 
+ \hline
+ Local Group & \(4.083\) & \(2.043 * 10^{-1}\) & \(2.906 * 10^{-2}\) & \(4.316\) & \(0.054\)\\ 
+ \hline
+\end{tabular}
+\end{center}
+
+\section*{Questions}
+
+\begin{enumerate}
+\item The total masses of M31 and the Milky Way are the same in this simulation. They are dominated by the masses of their Halos.
+\item The stellar mass of M31 is somewhat larger than that of the Milky Way, which implies that M31 will be more luminous. 
+\item The Milky Way has 2.8\% more dark matter than M31. This is mildly surprising, given that M31 has more stellar matter, which one would imagine would indicate a higher concentration of dark matter, from gravitational considerations.
+\item The Milky Way has a baryon fraction of 0.024, M31 0.067, and M33 0.047. These are significantly lower than the 15\% observed universally. This could be because significant portions of stellar mass (but not of dark matter) are present in stellar clusters, as opposed to galaxies. 
+
+\end{enumerate}
+
+\end{document}
