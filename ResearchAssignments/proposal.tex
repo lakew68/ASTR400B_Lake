@@ -1,0 +1,44 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Tidal Evolution of Galactic Bulges during Major Merges}
+\author{William Lake}
+
+\begin{document}
+\maketitle
+
+\paragraph{}
+
+Historically, simulations of galactic mergers have not successfully reproduced observational data about the nature of galactic bulges (Brooks et al. 2015). Typical attempts to do so have produced bulges which, in earlier simulations, were much too dense. About 10 years ago, researchers finally overcame this problem and successfully formed bulgeless dwarf disk galaxies, but through the same process began to form bulges that were much too massive in larger galaxies. Only in very recent years have models begun to be able to form somewhat realistic bulges, which has limited theoretical study of bulge properties and evolution. As such, there is relatively little simulation data to support or refute existing theory on how bulge properties develop and change in mergers.
+
+\paragraph{}
+
+	In general, classical bulges share many properties with elliptical galaxies, as discussed in Brooks' paper. It is a reasonable hypothesis, then, that classical bulges and elliptical galaxies share similar formation mechanisms: that is, that classical bulges are formed through violent mergers, and therefore that the Milky Way-M31 merger will form a bulge which more resembles a classical bulge. If we find that it has, in fact, formed a pseudobulge similar to the one the Milky Way has now, we would also want to know why, and to discover its properties. As such, an interesting problem one may explore using simulation data such as we have of the M31-Milky Way merger is to determine whether the bulge is classical, and if so, to analyze its properties as if it were an elliptical galaxy, finding similarities and differences. A typical way to do this would be to fit the resultant bulge to a Sersic density profile by leveraging existing code from our MassProfile class (if a Sersic profile can in fact describe the bulge, which is a question built into the problem). An n value greater than 2 would imply that our bulge is classical, as we may expect, and would provoke further questioning and analysis as an elliptical galaxy. 
+    
+    \paragraph{}
+	
+    Should the bulge prove to be classical (or even if it seems to be a pseudobulge), finding its geometry may be a good next area of study. It would be interesting to find its degree of ellipticity, thus classifying it among elliptical galaxies, if it is classical. If it is a pseudobulge, finding out whether it is boxy or disky would be worthwhile. We would need new code to do this: first, we would need to identify the particles that make up the remnant's bulge, leveraging existing code to identify the remnant itself. Next, we could visualize just the bulge itself using VisIt or a comparable program, and visually determine its semi-major and semi-minor axes (if this does not work, writing a script to do it similar to our existing galactic radius calculations will not be too difficult).
+    
+    \paragraph{}
+    
+A further interesting question would be to examine the remnant's bulge kinematics, finding its velocity dispersion and its rotation rate. Tracking how these evolve as the system equilibriates would also be interesting, and would not be particularly difficult to write code to find (particularly for the velocity dispersion). We could leverage this data into solving another question of interest: does the remnant's bulge fall on the fundamental plane for elliptical galaxies? That is, do the effective radius, central velocity dispersion, and surface brightness of the bulge follow the typical relation for ellipticals? As we have existing code to find the radius, and are going to generate velocity dispersion data, this should not be too challenging a problem, as we can use typical surface brightness-mass relations to find an expected surface brightness for the bulge. 
+
+\section{Works Cited}
+
+\hangindent=0.7cm{}
+Brooks, Alyson, and Charlotte Christensen. “Bulge Formation via Mergers in Cosmological Simulations.” Astrophysics and Space Science Library Galactic Bulges, 2016, pp. 317–353., doi:10.1007/978-3-319-19378\_12.
+
+\end{document}
