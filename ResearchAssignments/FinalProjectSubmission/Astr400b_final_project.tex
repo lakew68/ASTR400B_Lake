@@ -1,0 +1,250 @@
+%% This is emulateapj reformatting of the AASTEX sample document
+%%
+\documentclass[iop]{emulateapj}
+
+\newcommand{\vdag}{(v)^\dagger}
+
+%% You can insert a short comment on the title page using the command below.
+
+
+%% If you wish, you may supply running head information, although
+%% this information may be modified by the editorial offices.
+%% The left head contains a list of authors,
+%% usually a maximum of three (otherwise use et al.).  The right
+%% head is a modified title of up to roughly 44 characters.
+%% Running heads will not print in the manuscript style.
+
+\shorttitle{Evolution of Galactic Bulges during Major Mergers}
+\shortauthors{William Lake}
+
+%% This is the end of the preamble.  Indicate the beginning of the
+%% paper itself with \begin{document}.
+
+\begin{document}
+
+%% LaTeX will automatically break titles if they run longer than
+%% one line. However, you may use \\ to force a line break if
+%% you desire.
+
+\title{Evolution of Galactic Bulges during Major Mergers}
+
+%% Use \author, \affil, and the \and command to format
+%% author and affiliation information.
+%% Note that \email has replaced the old \authoremail command
+%% from AASTeX v4.0. You can use \email to mark an email address
+%% anywhere in the paper, not just in the front matter.
+%% As in the title, use \\ to force line breaks.
+
+\author{William Lake}
+\affil{Steward Observatory, University of Arizona,
+    Tucson, AZ 85719}
+
+
+%% Notice that each of these authors has alternate affiliations, which
+%% are identified by the \altaffilmark after each name.  Specify alternate
+%% affiliation information with \altaffiltext, with one command per each
+%% affiliation.
+
+
+%% Mark off your abstract in the ``abstract'' environment. In the manuscript
+%% style, abstract will output a Received/Accepted line after the
+%% title and affiliation information. No date will appear since the author
+%% does not have this information. The dates will be filled in by the
+%% editorial office after submission.
+
+\begin{abstract}
+
+In this paper, we will be examining the evolution of galactic bulges during major merger events, and more specifically the coming major merger between M31 and the Milky Way. This is of interest in galaxy formation models because not much is currently known for certain about bulge evolution, especially because historical models have failed to reproduce observational data from galactic bulges. We explore specifically how the remnant bulge evolves on the Fundamental Plane in comparison to the two precursor bulges, and how its kinematic properties compare to the precursors. This allows us to classify its behavior among existing bulge classifications, giving us clues towards how various types of bulges form, and therefore clues towards the formation history of a given bulge type. We find that the remnant bulge more resembles a small, isolated elliptical galaxy than it does either a classical bulge or a pseudobulge, although its kinematics are largely what existing theory predicts. This could imply a formation mechanism for observed classical bulges that differs from the common one in modern literature-- formation in major merger events.
+
+\end{abstract}
+
+
+
+\section{Introduction}
+
+Historically, simulations of galactic mergers have not successfully reproduced observational data about the nature of galactic bulges (Brooks et al. 2015, Combes 2009). Typical attempts to do so have produced bulges which, in earlier simulations, were much too dense. About 10 years ago, researchers finally overcame this problem and successfully formed bulgeless dwarf disk galaxies, but through the same process began to form bulges that were much too massive in larger galaxies. Only in very recent years have models begun to be able to form somewhat realistic bulges, which has limited theoretical study of bulge properties and evolution. As such, there is relatively little simulation data to support or refute existing theory on how bulge properties develop and change in mergers.
+
+A few classifications are useful when studying spiral galaxy bulges, which are closely related both to observable bulge properties, and past evolutionary history of bulges. The major classifications are known as "pseudobulges" and "classical bulges," and each set has a number of distinguishing properties. Pseudobulges are generally younger and more active, having not been disturbed by many (if any) major collision/merger events. They generally tend to be more rotationally dominated, and act less like elliptical galaxies. As the merger remnant does not satisfy these characteristics, it would be unexpected for it to be a pseudobulge (although we will analyze that later in the paper). 
+
+On the other hand, classical bulges share many properties with elliptical galaxies, as discussed in Brooks' and Gadotti's papers (Gadotti 2009). They are dispersion dominated, with older populations of stars and little new star formation. It is commonly thought, as a result of these similarities, that classical bulges and elliptical galaxies share similar formation mechanisms and can be analyzed in similar ways: that is, that classical bulges are formed through violent mergers between similarly sized galaxies, and therefore that the Milky Way-M31 merger will form a bulge which more resembles a classical bulge. This is still an open question, though, as while current models predict that remnants of major mergers will be classical, the same models don't accurately replicate the range of observed bulges (and lack thereof, in some cases) we have found.
+
+As Gadotti discusses, classical bulges do not act simply as an elliptical galaxy surrounded by a disc, as more simplistic, earlier models assumed. A common way of distinguishing dispersion-dominated objects such as various types of bulges and elliptical galaxies is known as the Fundamental Plane, and is useful for such comparisons. The below equations (Bender et al. 1992) and Figure 1 describe this Fundamental Plane, and show where on the plane various objects lie:
+
+\begin{equation}
+\kappa_1 \equiv \frac{log(\sigma^2_0) + log(r_e)}{\sqrt{2}}
+\end{equation}
+
+\begin{equation}
+\kappa_2 \equiv \frac{log(\sigma^2_0) + 2 log(I_e) - log(r_e)}{\sqrt{6}}
+\end{equation}
+
+\begin{equation}
+\kappa_3 \equiv \frac{log(\sigma^2_0) - log(I_e) - log(r_e)}{\sqrt{3}}
+\end{equation}
+
+As one can see from Figure 1, when viewing the Fundamental Plane edge-on (comparing $\kappa_1$ and $\kappa_3$), there is relatively little difference between classical bulges and elliptical galaxies. They both follow roughly the same relation. As one might expect, pseudobulges do not follow the same trend, as is clearly visible in the figure, tending towards lower values of $\kappa_1$ for similar values of $\kappa_3$. \footnote{The above equations involve a number of variables. As a quick overview, $\sigma_0$ is the central velocity dispersion of the object, in km/s. $r_e$ is the effective radius of the object in kpc, also known as the half-light radius, and $I_e$ is the mean surface brightness interior to said radius. It may also be of interest to note that $\kappa_1 \propto log(M)$, making it a good measurement of size. In addition, $\kappa_2 \propto log(\frac{M}{L} * I_e^3)$, and $\kappa_3 \propto log(\frac{M}{L})$.}
+
+When viewing the Fundamental Plane face-on (comparing $\kappa_1$ to $\kappa_2$), the differences between various types of objects is much more pronounced. Classical bulges tend to have higher values of $\kappa_2$ and lower values of $\kappa_1$ than elliptical galaxies. Meanwhile, pseudobulges tend to have the lowest values of $\kappa_1$, with similar values of $\kappa_2$ to elliptical galaxies. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{"Figure 1".PNG}
+    \caption{The Fundamental Plane represented in $\kappa$-space (Gadotti 2009). We have marked the remnant bulge on it in purple, M31 in grey, and the Milky Way in yellow.}
+\end{figure}
+
+This plot is then extremely useful in quantifying and displaying the differences between these various types of objects. With simulation data, we can actually discover how bulges move along the Fundamental Plane through major merger events, and see their evolution from early, pseudobulge-like structures into classical bulges, actually tracking progress through the plane. This is where the discussion from the beginning of the introduction comes in: new simulation data for bulge dynamics and structure during major mergers, such as the data set this paper focuses on, allows us to study previously less-examined questions such as the evolution of these bulges along the plane. More specifically, we can examine where the Milky Way-M31 merger remnant's bulge will fall on the plane and how it will evolve. 
+
+\subsection{This Project}
+
+As we briefly discussed above, the key goal of this project is to determine the evolutionary path of galaxies, and in particular galactic bulges, during major merger events. It's not perfectly established how bulges evolve through mergers, with most existing theory suggesting that bulges should grow far larger, with far more efficiency, than is possible given observations. 
+
+\vspace*{5 mm}
+
+One of the best ways to track bulge growth, as we have discussed, is the Fundamental Plane. Therefore, the first question this research will attempt to answer is, how does the merger remnant's bulge evolve on the FP, and where does it end up? This has been discussed at length above, and will be below, so we will leave the question at that for now.
+
+A further topic of interest to our research is that of the kinematics of the bulge. This has connections to the distinctions between pseudobulges and classical bulges discussed before. Researchers such as Tonini et al. (2016) have explored the kinematic evolution of bulges, and concluded that simply observing bulge morphologies is not sufficient to understand their formation mechanisms. Rather, a researcher must observe the evolution of kinematic properties such as velocity dispersion. Therefore, in this paper we aim to examine the velocity distributions of both the remnant bulge, and the two initial bulges, hoping to verify existing theory (that the remnant bulge will become dispersion-dominated, with a larger dispersion value that the initial bulges).
+
+\section{Methods}
+
+The simulation data used in this paper was created by Besla et al. 2012. It was the first simulation to ever constrain the proper motion of M31, having been based on observations earlier in its series of papers. It included M31, the Milky Way, and M33, while not including the Magellanic Clouds (which are moving away from the system on an orbit that will likely not return for a number of Ga). To study the system, Besla et al. set a number of known initial conditions for the three galaxies and varied the rest over parameter space for the range of accepted values. They then ran 1,000 N-body simulations, examining the range of outcomes possible in the merger event. The N-body method used was a smoothed particle hydrodynamics code known as GADGET-3. The dataset we are examining is one of their generic-canonical outcomes, where M31 and the Milky Way merge without M33 also colliding, and M33 ends up in an orbit around the remnant, rather than being ejected from the group. 
+
+In order to answer the questions we set out to, we created a code repository with a number of classes and functions. The first, trivial, function we created was named ReadFile. It simply read the dataset, and output an array representation of the datafile, as well as its metadata. Subsequently, in order to identify the center of mass properties of the objects in the data set, we used the program CenterOfMass2. It used an iterative process to determine the center of mass position of the Galaxy component to within a certain tolerance, by iterating over smaller and smaller sections of the given component. It then used this center of mass position to determine the mean velocity of the (relative) inner regions of the galaxy components, which was treated as the center of mass velocity.
+
+Having found the center of mass position and velocity of the galaxy, we proceeded to find velocity dispersion values (which were found by simply subtracting the center of mass velocity from particle velocities, and then finding the standard deviation of the velocity profile at various radii). This was done using the VelocityDispersion (for the initial bulges) and VelocityDispersion2 (for the merger remnant) classes, which were written explicitly for this project. This permitted both analysis of the velocity distribution, and Fundamental Plane calculations. They also allowed generation of the histograms seen below.
+
+Subsequently, we used the MassProfile and MassProfile2 codes to examine the surface mass profile of the bulge. This was useful for determining the total remaining (i.e., not ejected) mass of the bulge, and determining the effective radius and mass for the Fundamental Plane calculation. A key assumption we made to make this code work was that the initial bulges, and final bulge remnant, were roughly spherical, allowing me to simply neglect the z component of particle positions in projecting the bulges onto a disc. The surface mass was then converted into an effective surface intensity using the simple equation below:
+
+\begin{equation}
+    \langle I_e \rangle = \frac{M_e}{\pi r_e(pc)^2} * (\frac{M}{L})^{-1} 
+\end{equation}
+
+$\frac{M}{L}$, in this case, was assumed to be about 2 $\frac{M_\odot}{L_\odot}$, as is typical for galactic bulges. Subsequently, having found $\langle I_e \rangle$, $\sigma_0$, and $r_e$ for all bulges we examined, we simply used equations 1, 2, and 3 above to convert our results into $\kappa$-space, as discussed in the introduction.
+
+\section{Results}
+
+We began by analyzing the surface mass profiles of the initial bulges for M31 and the Milky Way, and the remnant bulge from Snap 800, using MassProfile2, as described above. We found the initial bulges to have masses of approximately $1.8 * 10^{10} M_\odot$ and $9.7 * 10^9 M_\odot$, respectively. The final bulge was found to have a mass (limited to a 30 kpc radius, which is comparable to the initial radii of the galaxies) of approximately $2.65 * 10^{10} M_\odot$ which, unsurprisingly, indicates some mass loss. 
+
+Using the same code file, we found the effective radii for the bulges mentioned above, by finding the radius for each whose enclosed surface mass was closest to half of the mass of the object. For the Milky Way, this radius was found to be $r_e = 1.80$ kpc. For M31, $r_e = 1.88$ kpc, and for the remnant $r_e = 2.37$ kpc. Using the half-mass of the bulges, their effective radii, and our assumption of a mass-to-light ratio for the bulges of around 2, we then calculated the effective surface intensities of the bulges using Equation 4. They are given in the table of results below.
+
+Next, we looked at the velocity distributions of the bulges. As one can see in figures 2 and 3, the initial bulges had generally lower velocity dispersions (and therefore narrower velocity distributions) than the remnant bulge. Each of them had central velocity dispersions in the whereabouts of 90 km/s, depending on the radius one chooses as "central". 
+
+Having found all of the directly measured data we need, we then calculated $\kappa_{1,2,3}$ for each bulge using equations 1-3 and inserted them into the following table and figure 1, for analysis and discussion of the resulting plots.
+
+\begin{tabular}{||c c c c||} 
+ \hline
+ Bulge & $\sigma_0 (km/s)$ & $r_e (kpc)$ & $\langle I_e \rangle (\frac{L_\odot}{pc^2})$ \\ [0.5ex] 
+ \hline\hline
+ Milky Way & 92 & 1.80 & 239.5 \\ 
+ \hline
+ M31 & 92.5 & 1.88 & 410.9 \\
+ \hline
+ Merger Remnant & 115 & 2.38 & 371.4 \\ [1ex] 
+ \hline
+\end{tabular}
+
+\hspace*{1 cm}
+
+\begin{tabular}{||c c c c||} 
+ \hline
+ Bulge & \kappa_1 & \kappa_2 & \kappa_3 \\ [0.5ex] 
+ \hline\hline
+ Milky Way & 2.96 & 3.44 & 0.75 \\ 
+ \hline
+ M31 & 2.97 & 3.63 & 0.60 \\
+ \hline
+ Merger Remnant & 3.18 & 3.63 & 0.68 \\ [1ex] 
+ \hline
+\end{tabular}
+
+
+
+\section{Discussion}
+
+As one can see from figure 2, the final bulge has a broader velocity profile than either initial bulge (particularly M31), indicating it to be more dispersion-dominated, as we expected. One can also see more directly that the merger remnant has a much higher velocity dispersion than either initial bulge in figure 3, which shows the enclosed particle velocity dispersion as a function of radius. These support the existing theory of bulge evolution discussed earlier, where bulges begin their lives as more rotational pseudobulges, and evolve through merger events to become more classical dispersion-dominated bodies. 
+
+What is perhaps more interesting than a simple kinematic analysis of the bulges' evolution is the result of plotting each bulge on the Fundamental Plane. As one would expect, all of the bulges fall into the fairly tight $\kappa_1 - \kappa_3$ relation that characterizes most bulges, but looking at the $\kappa_1 - \kappa_2$ graph paints an interesting picture of bulge evolution. The remnant bulge has a much larger value of $\kappa_1$ than either initial bulge, which is expected, since at its heart $\kappa_1$ is a measure of component mass. However, since its value of $\kappa_2$ is equal to M31's, it is found directly to the right of the two precursor bulges on the graph. Therefore, while the precursor bulges fall into the expected pseudobulge region (with M31's having, perhaps, some characteristics of a classical bulge), the merged bulge has similar properties to neither type of bulge at all, but rather, a low-mass elliptical galaxy. While some classical bulges and pseudobulges do approach the region of the plane where the merger remnant appears, it is fully surrounded by examples of real ellipticals. This, perhaps, contradicts the modern theories that classical bulges typically form in major mergers, instead indicating that the bulges that form in such mergers act as if they aren't associated with a disc at all. From the proportionality relation for $\kappa_2$ from the first footnote, this result indicates that merger bulges have shallower density profiles than one would expect from a classical bulge, with lower central densities for the same mass. And as one can see from the first table, the merger remnant did indeed have a shallower density profile than M31, and a much larger effective radius than either precursor bulge (although neither precursor had a classical bulge).
+
+\section{Conclusion}
+
+In this paper, we have examined the evolution of the galactic bulges involved in the Milky Way-M31 merger. We have found that while the kinematic evolution of the bulges followed existing theory, with the bulges becoming more dispersion-dominated (and therefore, less rotational) as the merger progressed. However, our examination of the bulges' evolution on the Fundamental Plane did not necessarily match existing theory, as the two precursor pseudobulges evolved to resemble an isolated elliptical galaxy in their properties, rather than a typical classical bulge. The key difference between the two in fundamental plane calculations, for constant mass, is the parameter $\kappa_2$, which can be represented as proportional to $log(\frac{M}{L} * I_e^3)$. As one can see from this, perhaps the most important distinction between classical bulges and elliptical galaxies on the Fundamental Plane is the effective surface intensity, which can be related to the mass profile of the galaxy. Because of this, an interesting next step in this research may be to model the surface mass profiles of the bulges (using a Sersic profile), tracking how their Sersic index changes with time. Examining other major merger simulations using different sets of initial conditions (particularly the ratio of galaxy masses) may also be an interesting avenue of exploration, to gather more data on how other galaxies move along the FP, and whether other bulges do end up more resembling classical bulges upon merging.
+
+\begin{thebibliography}{}
+\bibitem[Bender et al.(1992)]{1992ApJ...399..462B} Bender, R., Burstein, D., \& Faber, S.~M.\ 1992, \apj, 399, 462 
+\bibitem[Combes(2009)]{2009ASPC..419...31C} Combes, F.\ 2009, Galaxy Evolution: Emerging Insights and Future Challenges, 419, 31 
+\bibitem[Gadotti(2009)]{2009MNRAS.393.1531G} Gadotti, D.~A.\ 2009, \mnras, 393, 1531 
+\bibitem[Hopkins et al.(2010)]{2010ApJ...715..202H} Hopkins, P.~F., Bundy, K., Croton, D., et al.\ 2010, \apj, 715, 202 
+\bibitem[Tonini et al.(2016)]{2016MNRAS.459.4109T} Tonini, C., Mutch, S.~J., Croton, D.~J., \& Wyithe, J.~S.~B.\ 2016, \mnras, 459, 4109 
+\bibitem[van der Marel et al.(2012)]{2012ApJ...753....9V} van der Marel, R.~P., Besla, G., Cox, T.~J., Sohn, S.~T., \& Anderson, J.\ 2012, \apj, 753, 9 
+
+\end{thebibliography}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{Astr400Histogram.PNG}
+    \caption{Histogram of the center of mass velocity-subtracted velocity distribution for the bodies considered in this paper}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{Dispersion_Plot.png}
+    \caption{Graph of the velocity dispersion vs. radius for the bodies considered in this paper}
+\end{figure}
+%% Use the figure environment and \plotone or \plottwo to include
+%% figures and captions in your electronic submission.
+%% To embed the sample graphics in
+%% the file, uncomment the \plotone, \plottwo, and
+%% \includegraphics commands
+%%
+%% If you need a layout that cannot be achieved with \plotone or
+%% \plottwo, you can invoke the graphicx package directly with the
+%% \includegraphics command or use \plotfiddle. For more information,
+%% please see the tutorial on "Using Electronic Art with AASTeX" in the
+%% documentation section at the AASTeX Web site,
+%% http://www.journals.uchicago.edu/AAS/AASTeX.
+%%
+%% The examples below also include sample markup for submission of
+%% supplemental electronic materials. As always, be sure to check
+%% the instructions to authors for the journal you are submitting to
+%% for specific submissions guidelines as they vary from
+%% journal to journal.
+
+
+%% This example uses \plotone to include an EPS file scaled to
+%% 80% of its natural size with \epsscale. Its caption
+%% has been written to indicate that additional figure parts will be
+%% available in the electronic journal.
+
+
+%% If you are not including electonic art with your submission, you may
+%% mark up your captions using the \figcaption command. See the
+%% User Guide for details.
+%%
+%% No more than seven \figcaption commands are allowed per page,
+%% so if you have more than seven captions, insert a \clearpage
+%% after every seventh one.
+
+%% Tables should be submitted one per page, so put a \clearpage before
+%% each one.
+
+%% Two options are available to the author for producing tables:  the
+%% deluxetable environment provided by the AASTeX package or the LaTeX
+%% table environment.  Use of deluxetable is preferred.
+%%
+
+%% Three table samples follow, two marked up in the deluxetable environment,
+%% one marked up as a LaTeX table.
+
+%% In this first example, note that the \tabletypesize{}
+%% command has been used to reduce the font size of the table.
+%% We also use the \rotate command to rotate the table to
+%% landscape orientation since it is very wide even at the
+%% reduced font size.
+%%
+%% Note also that the \label command needs to be placed
+%% inside the \tablecaption.
+
+%% This table also includes a table comment indicating that the full
+%% version will be available in machine-readable format in the electronic
+%% edition.
+%%
+\end{document}
